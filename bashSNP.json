@@ -1,0 +1,969 @@
+{
+
+    "if statement": {
+        "scope": "shellscript",
+        "prefix": "if",
+        "body": "if [ $1 ]; then\n\t$0\nfi",
+        "description": "If statement"
+    },
+    "else statement": {
+        "scope": "shellscript",
+        "prefix": "else",
+        "body": "else\n\t$0",
+        "description": "Else statement"
+    },
+    "elif statement": {
+        "scope": "shellscript",
+        "prefix": "elif",
+        "body": "elif [ $1 ]; then\n\t$0",
+        "description": "Elif statement"
+    },
+    "for loop": {
+        "scope": "shellscript",
+        "prefix": "for",
+        "body": "for $1 in $2; do\n\t$0\ndone",
+        "description": "For loop"
+    },
+    "while loop": {
+        "scope": "shellscript",
+        "prefix": "while",
+        "body": "while [ $1 ]; do\n\t$0\ndone",
+        "description": "While loop"
+    },
+    "until loop": {
+        "scope": "shellscript",
+        "prefix": "until",
+        "body": "until [ $1 ]; do\n\t$0\ndone",
+        "description": "Until loop"
+    },
+    "case statement": {
+        "scope": "shellscript",
+        "prefix": "case",
+        "body": "case $1 in\n\t$2)\n\t\t$0\n\t\t;;\nesac",
+        "description": "Case statement"
+    },
+    "function": {
+        "scope": "shellscript",
+        "prefix": "function",
+        "body": "function $1() {\n\t$0\n}",
+        "description": "Function definition"
+    },
+    "select": {
+        "scope": "shellscript",
+        "prefix": "select",
+        "body": "select $1 in $2; do\n\t$0\ndone",
+        "description": "Select menu"
+    },
+    
+ 
+    "echo": {
+        "scope": "shellscript",
+        "prefix": "echo",
+        "body": "echo $0",
+        "description": "Echo command"
+    },
+    "read": {
+        "scope": "shellscript",
+        "prefix": "read",
+        "body": "read $0",
+        "description": "Read input"
+    },
+    "sudo": {
+        "scope": "shellscript",
+        "prefix": "sudo",
+        "body": "sudo $0",
+        "description": "Sudo command"
+    },
+    "cd": {
+        "scope": "shellscript",
+        "prefix": "cd",
+        "body": "cd $0",
+        "description": "Change directory"
+    },
+    "mkdir": {
+        "scope": "shellscript",
+        "prefix": "mkdir",
+        "body": "mkdir $0",
+        "description": "Make directory"
+    },
+    "touch": {
+        "scope": "shellscript",
+        "prefix": "touch",
+        "body": "touch $0",
+        "description": "Create file"
+    },
+    "rm": {
+        "scope": "shellscript",
+        "prefix": "rm",
+        "body": "rm $0",
+        "description": "Remove file"
+    },
+    "rmdir": {
+        "scope": "shellscript",
+        "prefix": "rmdir",
+        "body": "rmdir $0",
+        "description": "Remove directory"
+    },
+    "grep": {
+        "scope": "shellscript",
+        "prefix": "grep",
+        "body": "grep $0",
+        "description": "Search text"
+    },
+    "find": {
+        "scope": "shellscript",
+        "prefix": "find",
+        "body": "find $0",
+        "description": "Find files"
+    },
+    "ls": {
+        "scope": "shellscript",
+        "prefix": "ls",
+        "body": "ls $0",
+        "description": "List files"
+    },
+    "chmod": {
+        "scope": "shellscript",
+        "prefix": "chmod",
+        "body": "chmod $0",
+        "description": "Change permissions"
+    },
+    "chown": {
+        "scope": "shellscript",
+        "prefix": "chown",
+        "body": "chown $0",
+        "description": "Change owner"
+    },
+    "cat": {
+        "scope": "shellscript",
+        "prefix": "cat",
+        "body": "cat $0",
+        "description": "Display file contents"
+    },
+    "mv": {
+        "scope": "shellscript",
+        "prefix": "mv",
+        "body": "mv $0",
+        "description": "Move/rename file"
+    },
+    "cp": {
+        "scope": "shellscript",
+        "prefix": "cp",
+        "body": "cp $0",
+        "description": "Copy file"
+    },
+    "exit": {
+        "scope": "shellscript",
+        "prefix": "exit",
+        "body": "exit $0",
+        "description": "Exit script"
+    },
+    "export": {
+        "scope": "shellscript",
+        "prefix": "export",
+        "body": "export $0",
+        "description": "Export variable"
+    },
+    "source": {
+        "scope": "shellscript",
+        "prefix": "source",
+        "body": "source $0",
+        "description": "Source script"
+    },
+    "shebang": {
+        "scope": "shellscript",
+        "prefix": "shebang",
+        "body": "#!/bin/bash\n\n$0",
+        "description": "Shebang line"
+    },
+    
+  
+    "apt": {
+        "scope": "shellscript",
+        "prefix": "apt",
+        "body": "apt $0",
+        "description": "Advanced Package Tool"
+    },
+    "apt-get": {
+        "scope": "shellscript",
+        "prefix": "apt-get",
+        "body": "apt-get $0",
+        "description": "APT package handling utility"
+    },
+    "apt install": {
+        "scope": "shellscript",
+        "prefix": "apt install",
+        "body": "apt install $0",
+        "description": "Install packages"
+    },
+    "apt update": {
+        "scope": "shellscript",
+        "prefix": "apt update",
+        "body": "apt update",
+        "description": "Update package list"
+    },
+    "apt upgrade": {
+        "scope": "shellscript",
+        "prefix": "apt upgrade",
+        "body": "apt upgrade",
+        "description": "Upgrade packages"
+    },
+    "apt remove": {
+        "scope": "shellscript",
+        "prefix": "apt remove",
+        "body": "apt remove $0",
+        "description": "Remove packages"
+    },
+    "apt purge": {
+        "scope": "shellscript",
+        "prefix": "apt purge",
+        "body": "apt purge $0",
+        "description": "Remove packages and configs"
+    },
+    "apt search": {
+        "scope": "shellscript",
+        "prefix": "apt search",
+        "body": "apt search $0",
+        "description": "Search packages"
+    },
+    "apt-get install": {
+        "scope": "shellscript",
+        "prefix": "apt-get install",
+        "body": "apt-get install $0",
+        "description": "Install packages (apt-get)"
+    },
+    "dpkg": {
+        "scope": "shellscript",
+        "prefix": "dpkg",
+        "body": "dpkg $0",
+        "description": "Debian package manager"
+    },
+    "yum": {
+        "scope": "shellscript",
+        "prefix": "yum",
+        "body": "yum $0",
+        "description": "Yellowdog Updater Modified"
+    },
+    "yum install": {
+        "scope": "shellscript",
+        "prefix": "yum install",
+        "body": "yum install $0",
+        "description": "Install packages (yum)"
+    },
+    "dnf": {
+        "scope": "shellscript",
+        "prefix": "dnf",
+        "body": "dnf $0",
+        "description": "Dandified YUM"
+    },
+    "pacman": {
+        "scope": "shellscript",
+        "prefix": "pacman",
+        "body": "pacman $0",
+        "description": "Arch package manager"
+    },
+    "snap": {
+        "scope": "shellscript",
+        "prefix": "snap",
+        "body": "snap $0",
+        "description": "Snap package manager"
+    },
+    "flatpak": {
+        "scope": "shellscript",
+        "prefix": "flatpak",
+        "body": "flatpak $0",
+        "description": "Flatpak package manager"
+    },
+    "brew": {
+        "scope": "shellscript",
+        "prefix": "brew",
+        "body": "brew $0",
+        "description": "Homebrew package manager"
+    },
+    
+
+    "ping": {
+        "scope": "shellscript",
+        "prefix": "ping",
+        "body": "ping $0",
+        "description": "Ping host"
+    },
+    "ifconfig": {
+        "scope": "shellscript",
+        "prefix": "ifconfig",
+        "body": "ifconfig $0",
+        "description": "Network interface configuration"
+    },
+    "ip": {
+        "scope": "shellscript",
+        "prefix": "ip",
+        "body": "ip $0",
+        "description": "IP command"
+    },
+    "netstat": {
+        "scope": "shellscript",
+        "prefix": "netstat",
+        "body": "netstat $0",
+        "description": "Network statistics"
+    },
+    "ssh": {
+        "scope": "shellscript",
+        "prefix": "ssh",
+        "body": "ssh $0",
+        "description": "Secure shell"
+    },
+    "scp": {
+        "scope": "shellscript",
+        "prefix": "scp",
+        "body": "scp $0",
+        "description": "Secure copy"
+    },
+    "wget": {
+        "scope": "shellscript",
+        "prefix": "wget",
+        "body": "wget $0",
+        "description": "Web get"
+    },
+    "curl": {
+        "scope": "shellscript",
+        "prefix": "curl",
+        "body": "curl $0",
+        "description": "Client URL"
+    },
+    "nc": {
+        "scope": "shellscript",
+        "prefix": "nc",
+        "body": "nc $0",
+        "description": "Netcat"
+    },
+    "nmap": {
+        "scope": "shellscript",
+        "prefix": "nmap",
+        "body": "nmap $0",
+        "description": "Network mapper"
+    },
+    "dig": {
+        "scope": "shellscript",
+        "prefix": "dig",
+        "body": "dig $0",
+        "description": "DNS lookup"
+    },
+    "host": {
+        "scope": "shellscript",
+        "prefix": "host",
+        "body": "host $0",
+        "description": "DNS lookup"
+    },
+    "traceroute": {
+        "scope": "shellscript",
+        "prefix": "traceroute",
+        "body": "traceroute $0",
+        "description": "Trace route to host"
+    },
+    "whois": {
+        "scope": "shellscript",
+        "prefix": "whois",
+        "body": "whois $0",
+        "description": "Domain information"
+    },
+    
+
+    "sed": {
+        "scope": "shellscript",
+        "prefix": "sed",
+        "body": "sed '$0' ",
+        "description": "Stream editor"
+    },
+    "awk": {
+        "scope": "shellscript",
+        "prefix": "awk",
+        "body": "awk '{$0}' ",
+        "description": "Pattern scanning"
+    },
+    "cut": {
+        "scope": "shellscript",
+        "prefix": "cut",
+        "body": "cut $0",
+        "description": "Cut parts of lines"
+    },
+    "sort": {
+        "scope": "shellscript",
+        "prefix": "sort",
+        "body": "sort $0",
+        "description": "Sort lines"
+    },
+    "uniq": {
+        "scope": "shellscript",
+        "prefix": "uniq",
+        "body": "uniq $0",
+        "description": "Remove duplicates"
+    },
+    "head": {
+        "scope": "shellscript",
+        "prefix": "head",
+        "body": "head $0",
+        "description": "Show file beginning"
+    },
+    "tail": {
+        "scope": "shellscript",
+        "prefix": "tail",
+        "body": "tail $0",
+        "description": "Show file end"
+    },
+    "wc": {
+        "scope": "shellscript",
+        "prefix": "wc",
+        "body": "wc $0",
+        "description": "Word count"
+    },
+    "tee": {
+        "scope": "shellscript",
+        "prefix": "tee",
+        "body": "tee $0",
+        "description": "Read from stdin, write to stdout and files"
+    },
+    "tr": {
+        "scope": "shellscript",
+        "prefix": "tr",
+        "body": "tr $0",
+        "description": "Translate characters"
+    },
+    "diff": {
+        "scope": "shellscript",
+        "prefix": "diff",
+        "body": "diff $0",
+        "description": "Compare files"
+    },
+    "patch": {
+        "scope": "shellscript",
+        "prefix": "patch",
+        "body": "patch $0",
+        "description": "Apply patch to files"
+    },
+    "file": {
+        "scope": "shellscript",
+        "prefix": "file",
+        "body": "file $0",
+        "description": "Determine file type"
+    },
+    "less": {
+        "scope": "shellscript",
+        "prefix": "less",
+        "body": "less $0",
+        "description": "View file contents"
+    },
+    "more": {
+        "scope": "shellscript",
+        "prefix": "more",
+        "body": "more $0",
+        "description": "View file contents"
+    },
+    "tar": {
+        "scope": "shellscript",
+        "prefix": "tar",
+        "body": "tar $0",
+        "description": "Tape archiver"
+    },
+    "gzip": {
+        "scope": "shellscript",
+        "prefix": "gzip",
+        "body": "gzip $0",
+        "description": "Compress files"
+    },
+    "gunzip": {
+        "scope": "shellscript",
+        "prefix": "gunzip",
+        "body": "gunzip $0",
+        "description": "Uncompress files"
+    },
+    "bzip2": {
+        "scope": "shellscript",
+        "prefix": "bzip2",
+        "body": "bzip2 $0",
+        "description": "Compress files (bzip2)"
+    },
+    "zip": {
+        "scope": "shellscript",
+        "prefix": "zip",
+        "body": "zip $0",
+        "description": "Create zip archive"
+    },
+    "unzip": {
+        "scope": "shellscript",
+        "prefix": "unzip",
+        "body": "unzip $0",
+        "description": "Extract zip archive"
+    },
+    "xargs": {
+        "scope": "shellscript",
+        "prefix": "xargs",
+        "body": "xargs $0",
+        "description": "Build command from standard input"
+    },
+    
+
+    "ps": {
+        "scope": "shellscript",
+        "prefix": "ps",
+        "body": "ps $0",
+        "description": "Process status"
+    },
+    "top": {
+        "scope": "shellscript",
+        "prefix": "top",
+        "body": "top",
+        "description": "Display processes"
+    },
+    "htop": {
+        "scope": "shellscript",
+        "prefix": "htop",
+        "body": "htop",
+        "description": "Interactive process viewer"
+    },
+    "kill": {
+        "scope": "shellscript",
+        "prefix": "kill",
+        "body": "kill $0",
+        "description": "Kill process"
+    },
+    "killall": {
+        "scope": "shellscript",
+        "prefix": "killall",
+        "body": "killall $0",
+        "description": "Kill processes by name"
+    },
+    "nice": {
+        "scope": "shellscript",
+        "prefix": "nice",
+        "body": "nice $0",
+        "description": "Run with modified priority"
+    },
+    "renice": {
+        "scope": "shellscript",
+        "prefix": "renice",
+        "body": "renice $0",
+        "description": "Alter process priority"
+    },
+    "df": {
+        "scope": "shellscript",
+        "prefix": "df",
+        "body": "df $0",
+        "description": "Disk free space"
+    },
+    "du": {
+        "scope": "shellscript",
+        "prefix": "du",
+        "body": "du $0",
+        "description": "Disk usage"
+    },
+    "free": {
+        "scope": "shellscript",
+        "prefix": "free",
+        "body": "free $0",
+        "description": "Memory usage"
+    },
+    "uname": {
+        "scope": "shellscript",
+        "prefix": "uname",
+        "body": "uname $0",
+        "description": "System information"
+    },
+    "uptime": {
+        "scope": "shellscript",
+        "prefix": "uptime",
+        "body": "uptime",
+        "description": "System uptime"
+    },
+    "reboot": {
+        "scope": "shellscript",
+        "prefix": "reboot",
+        "body": "reboot",
+        "description": "Reboot system"
+    },
+    "shutdown": {
+        "scope": "shellscript",
+        "prefix": "shutdown",
+        "body": "shutdown $0",
+        "description": "Shutdown system"
+    },
+    "cron": {
+        "scope": "shellscript",
+        "prefix": "cron",
+        "body": "cron $0",
+        "description": "Time-based job scheduler"
+    },
+    "crontab": {
+        "scope": "shellscript",
+        "prefix": "crontab",
+        "body": "crontab $0",
+        "description": "Crontab file"
+    },
+    "at": {
+        "scope": "shellscript",
+        "prefix": "at",
+        "body": "at $0",
+        "description": "Execute at specified time"
+    },
+    "bg": {
+        "scope": "shellscript",
+        "prefix": "bg",
+        "body": "bg $0",
+        "description": "Send process to background"
+    },
+    "fg": {
+        "scope": "shellscript",
+        "prefix": "fg",
+        "body": "fg $0",
+        "description": "Bring process to foreground"
+    },
+    "jobs": {
+        "scope": "shellscript",
+        "prefix": "jobs",
+        "body": "jobs $0",
+        "description": "List running jobs"
+    },
+    "nohup": {
+        "scope": "shellscript",
+        "prefix": "nohup",
+        "body": "nohup $0",
+        "description": "Run command immune to hangups"
+    },
+    
+   
+    "useradd": {
+        "scope": "shellscript",
+        "prefix": "useradd",
+        "body": "useradd $0",
+        "description": "Add user"
+    },
+    "userdel": {
+        "scope": "shellscript",
+        "prefix": "userdel",
+        "body": "userdel $0",
+        "description": "Delete user"
+    },
+    "usermod": {
+        "scope": "shellscript",
+        "prefix": "usermod",
+        "body": "usermod $0",
+        "description": "Modify user"
+    },
+    "passwd": {
+        "scope": "shellscript",
+        "prefix": "passwd",
+        "body": "passwd $0",
+        "description": "Change password"
+    },
+    "groupadd": {
+        "scope": "shellscript",
+        "prefix": "groupadd",
+        "body": "groupadd $0",
+        "description": "Add group"
+    },
+    "groupdel": {
+        "scope": "shellscript",
+        "prefix": "groupdel",
+        "body": "groupdel $0",
+        "description": "Delete group"
+    },
+    "groupmod": {
+        "scope": "shellscript",
+        "prefix": "groupmod",
+        "body": "groupmod $0",
+        "description": "Modify group"
+    },
+    "su": {
+        "scope": "shellscript",
+        "prefix": "su",
+        "body": "su $0",
+        "description": "Switch user"
+    },
+    "id": {
+        "scope": "shellscript",
+        "prefix": "id",
+        "body": "id $0",
+        "description": "User identity"
+    },
+    "whoami": {
+        "scope": "shellscript",
+        "prefix": "whoami",
+        "body": "whoami",
+        "description": "Current user"
+    },
+    "who": {
+        "scope": "shellscript",
+        "prefix": "who",
+        "body": "who $0",
+        "description": "Show who is logged in"
+    },
+    "w": {
+        "scope": "shellscript",
+        "prefix": "w",
+        "body": "w $0",
+        "description": "Show who is logged in and what they are doing"
+    },
+    "last": {
+        "scope": "shellscript",
+        "prefix": "last",
+        "body": "last $0",
+        "description": "Show last logins"
+    },
+    
+    
+    "git": {
+        "scope": "shellscript",
+        "prefix": "git",
+        "body": "git $0",
+        "description": "Git version control"
+    },
+    "git clone": {
+        "scope": "shellscript",
+        "prefix": "git clone",
+        "body": "git clone $0",
+        "description": "Clone repository"
+    },
+    "git init": {
+        "scope": "shellscript",
+        "prefix": "git init",
+        "body": "git init $0",
+        "description": "Initialize repository"
+    },
+    "git add": {
+        "scope": "shellscript",
+        "prefix": "git add",
+        "body": "git add $0",
+        "description": "Add files to staging"
+    },
+    "git commit": {
+        "scope": "shellscript",
+        "prefix": "git commit",
+        "body": "git commit -m \"$0\"",
+        "description": "Commit changes"
+    },
+    "git status": {
+        "scope": "shellscript",
+        "prefix": "git status",
+        "body": "git status",
+        "description": "Show status"
+    },
+    "git push": {
+        "scope": "shellscript",
+        "prefix": "git push",
+        "body": "git push $0",
+        "description": "Push changes"
+    },
+    "git pull": {
+        "scope": "shellscript",
+        "prefix": "git pull",
+        "body": "git pull $0",
+        "description": "Pull changes"
+    },
+    "git branch": {
+        "scope": "shellscript",
+        "prefix": "git branch",
+        "body": "git branch $0",
+        "description": "List branches"
+    },
+    "git checkout": {
+        "scope": "shellscript",
+        "prefix": "git checkout",
+        "body": "git checkout $0",
+        "description": "Switch branches"
+    },
+    "git merge": {
+        "scope": "shellscript",
+        "prefix": "git merge",
+        "body": "git merge $0",
+        "description": "Merge branches"
+    },
+    "git log": {
+        "scope": "shellscript",
+        "prefix": "git log",
+        "body": "git log $0",
+        "description": "Show commit logs"
+    },
+    
+    
+    "docker": {
+        "scope": "shellscript",
+        "prefix": "docker",
+        "body": "docker $0",
+        "description": "Docker command"
+    },
+    "docker run": {
+        "scope": "shellscript",
+        "prefix": "docker run",
+        "body": "docker run $0",
+        "description": "Run a Docker container"
+    },
+    "docker build": {
+        "scope": "shellscript",
+        "prefix": "docker build",
+        "body": "docker build $0",
+        "description": "Build a Docker image"
+    },
+    "docker-compose": {
+        "scope": "shellscript",
+        "prefix": "docker-compose",
+        "body": "docker-compose $0",
+        "description": "Docker Compose"
+    },
+    
+    "pipe operator": {
+        "scope": "shellscript",
+        "prefix": "|",
+        "body": "| $0",
+        "description": "Pipe operator"
+    },
+    "redirect output": {
+        "scope": "shellscript",
+        "prefix": ">",
+        "body": "> $0",
+        "description": "Redirect output"
+    },
+    "redirect append output": {
+        "scope": "shellscript",
+        "prefix": ">>",
+        "body": ">> $0",
+        "description": "Append output"
+    },
+    "redirect input": {
+        "scope": "shellscript",
+        "prefix": "<",
+        "body": "< $0",
+        "description": "Redirect input"
+    },
+    "redirect error": {
+        "scope": "shellscript",
+        "prefix": "2>",
+        "body": "2> $0",
+        "description": "Redirect error"
+    },
+    "redirect all": {
+        "scope": "shellscript",
+        "prefix": "&>",
+        "body": "&> $0",
+        "description": "Redirect all output"
+    },
+    "heredoc": {
+        "scope": "shellscript",
+        "prefix": "<<",
+        "body": "<< EOF\n$0\nEOF",
+        "description": "Here document"
+    },
+    "background": {
+        "scope": "shellscript",
+        "prefix": "&",
+        "body": "& $0",
+        "description": "Run in background"
+    },
+    "and operator": {
+        "scope": "shellscript",
+        "prefix": "&&",
+        "body": "&& $0",
+        "description": "AND operator"
+    },
+    "or operator": {
+        "scope": "shellscript",
+        "prefix": "||",
+        "body": "|| $0",
+        "description": "OR operator"
+    },
+    "equal string": {
+        "scope": "shellscript",
+        "prefix": "==",
+        "body": "== $0",
+        "description": "String equality"
+    },
+    "not equal string": {
+        "scope": "shellscript",
+        "prefix": "!=",
+        "body": "!= $0",
+        "description": "String inequality"
+    },
+    "equal numeric": {
+        "scope": "shellscript",
+        "prefix": "-eq",
+        "body": "-eq $0",
+        "description": "Numeric equality"
+    },
+    "not equal numeric": {
+        "scope": "shellscript",
+        "prefix": "-ne",
+        "body": "-ne $0",
+        "description": "Numeric inequality"
+    },
+    "greater than": {
+        "scope": "shellscript",
+        "prefix": "-gt",
+        "body": "-gt $0",
+        "description": "Numeric greater than"
+    },
+    "less than": {
+        "scope": "shellscript",
+        "prefix": "-lt",
+        "body": "-lt $0",
+        "description": "Numeric less than"
+    },
+    "greater than or equal": {
+        "scope": "shellscript",
+        "prefix": "-ge",
+        "body": "-ge $0",
+        "description": "Numeric greater than or equal"
+    },
+    "less than or equal": {
+        "scope": "shellscript",
+        "prefix": "-le",
+        "body": "-le $0",
+        "description": "Numeric less than or equal"
+    },
+    "file exists": {
+        "scope": "shellscript",
+        "prefix": "-e",
+        "body": "-e $0",
+        "description": "File exists"
+    },
+    "file is directory": {
+        "scope": "shellscript",
+        "prefix": "-d",
+        "body": "-d $0",
+        "description": "Is directory"
+    },
+    "file is regular": {
+        "scope": "shellscript",
+        "prefix": "-f",
+        "body": "-f $0",
+        "description": "Is regular file"
+    },
+    "file is readable": {
+        "scope": "shellscript",
+        "prefix": "-r",
+        "body": "-r $0",
+        "description": "Is readable"
+    },
+    "file is writable": {
+        "scope": "shellscript",
+        "prefix": "-w",
+        "body": "-w $0",
+        "description": "Is writable"
+    },
+    "file is executable": {
+        "scope": "shellscript",
+        "prefix": "-x",
+        "body": "-x $0",
+        "description": "Is executable"
+    },
+    "file is non-zero size": {
+        "scope": "shellscript",
+        "prefix": "-s",
+        "body": "-s $0",
+        "description": "Is non-zero size"
+    },
+    
+    "$0": {
+        "scope": "shellscript",
+        "prefix": "$0",
+        "body": "$0",
+        "description": "Script name"
+	}
+}
